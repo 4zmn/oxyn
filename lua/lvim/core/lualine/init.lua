@@ -1,4 +1,14 @@
 local M = {}
+
+local function clear_lualine_fill_background()
+  for name, hl in pairs(vim.api.nvim_get_hl(0, {})) do
+    if name:match "^lualine_c_" then
+      hl.bg = "NONE"
+      pcall(vim.api.nvim_set_hl, 0, name, hl)
+    end
+  end
+end
+
 M.config = function()
   lvim.builtin.lualine = {
     active = true,
@@ -48,6 +58,10 @@ M.setup = function()
   require("lvim.core.lualine.styles").update()
 
   lualine.setup(lvim.builtin.lualine)
+
+  if lvim.transparent_window then
+    clear_lualine_fill_background()
+  end
 
   if lvim.builtin.lualine.on_config_done then
     lvim.builtin.lualine.on_config_done(lualine)

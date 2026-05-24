@@ -7,6 +7,18 @@ local styles = {
   none = nil,
 }
 
+local function clear_theme_fill_background(theme)
+  for _, mode in pairs(theme) do
+    if type(mode) == "table" then
+      if type(mode.c) == "table" then
+        mode.c.bg = "NONE"
+      end
+    end
+  end
+
+  return theme
+end
+
 styles.none = {
   style = "none",
   options = {
@@ -157,10 +169,14 @@ function M.update()
 
   local color_template = vim.g.colors_name or lvim.colorscheme
   local theme_supported, template = pcall(function()
-    require("lualine.utils.loader").load_theme(color_template)
+    return require("lualine.utils.loader").load_theme(color_template)
   end)
   if theme_supported and template then
-    lvim.builtin.lualine.options.theme = color_template
+    if lvim.transparent_window then
+      lvim.builtin.lualine.options.theme = clear_theme_fill_background(template)
+    else
+      lvim.builtin.lualine.options.theme = color_template
+    end
   end
 end
 

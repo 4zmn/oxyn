@@ -1,6 +1,6 @@
 # 4SHVIM
 
-A Neovim distribution by [4zmn](https://github.com/4zmn), forked from LunarVim.
+A Neovim distribution by [4zmn](https://github.com/4zmn).
 
 Requires **Neovim >= 0.10**. Neovim is not bundled.
 
