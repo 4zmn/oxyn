@@ -105,12 +105,12 @@ styles.lvim = {
     lualine_c = {
       components.filename,
       components.diff,
-      components.python_env,
     },
     lualine_x = {
+      components.macro,
       components.diagnostics,
+      components.lazy_updates,
       components.lsp,
-      components.spaces,
       components.filetype,
     },
     lualine_y = { components.location },
@@ -119,27 +119,14 @@ styles.lvim = {
     },
   },
   inactive_sections = {
-    lualine_a = {
-      components.mode,
-    },
-    lualine_b = {
-      components.branch,
-    },
+    lualine_a = {},
+    lualine_b = {},
     lualine_c = {
       components.filename,
-      components.diff,
-      components.python_env,
     },
-    lualine_x = {
-      components.diagnostics,
-      components.lsp,
-      components.spaces,
-      components.filetype,
-    },
+    lualine_x = {},
     lualine_y = { components.location },
-    lualine_z = {
-      components.progress,
-    },
+    lualine_z = {},
   },
   tabline = {},
   extensions = {},
