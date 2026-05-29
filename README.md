@@ -12,7 +12,7 @@ Requires **Neovim >= 0.10**. Neovim is not bundled.
 git clone https://github.com/4zmn/oxyn.git
 cd oxyn
 ./install.sh
-oxyn
+ox
 ```
 
 ---
@@ -23,7 +23,7 @@ oxyn
 
 | Path | Purpose |
 |------|---------|
-| `~/.local/bin/oxyn` | Launcher script |
+| `~/.local/bin/ox` | Launcher script |
 | `~/.local/share/oxyn/oxyn/` | OXYN runtime (cloned repo) |
 | `~/.config/oxyn/config.lua` | User config overrides |
 | `~/.cache/oxyn/` | Cache directory |
@@ -209,7 +209,7 @@ See `lua/lvim/plugins.lua` for the full list.
 ## Updating
 
 ```sh
-oxyn --headless '+Lazy! sync' +qa
+ox --headless '+Lazy! sync' +qa
 ```
 
 Or from within OXYN: `<Space>Lu` (or `<Space>L` then `u`).

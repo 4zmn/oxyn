@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="${NVIM_APPNAME:-oxyn}"
+APP_NAME="${NVIM_APPNAME:-ox}"
 INSTALL_PREFIX="${INSTALL_PREFIX:-"$HOME/.local"}"
 XDG_DATA_HOME="${XDG_DATA_HOME:-"$HOME/.local/share"}"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}"
@@ -60,8 +60,11 @@ StartupWMClass=nvim-${APP_NAME}
 MimeType=text/plain;
 EOF
 
-if [ "${SKIP_OXYN_SYNC:-0}" != "1" ]; then
-  "$dst" --headless '+Lazy! sync' +qa
-fi
+# First launch — Lazy will auto-detect and install any missing plugins via its UI
+# (just like AstroNvim, LazyVim, and other modern distros)
+echo ""
+echo "  Opening OXYN to finish setup..."
+sleep 1
+"$dst"
 
 echo "OXYN installed. Start it with: $dst"
