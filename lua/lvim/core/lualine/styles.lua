@@ -93,7 +93,7 @@ styles.lvim = {
     icons_enabled = lvim.use_icons,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
-    disabled_filetypes = { "alpha" },
+    disabled_filetypes = { "alpha", "snacks_dashboard" },
   },
   sections = {
     lualine_a = {

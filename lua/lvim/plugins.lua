@@ -299,16 +299,6 @@ local core_plugins = {
     enabled = lvim.builtin.dap.active,
   },
 
-  -- alpha
-  {
-    "goolord/alpha-nvim",
-    config = function()
-      require("lvim.core.alpha").setup()
-    end,
-    enabled = lvim.builtin.alpha.active,
-    event = "VimEnter",
-  },
-
   -- Terminal
   {
     "akinsho/toggleterm.nvim",
@@ -338,21 +328,34 @@ local core_plugins = {
   },
 
   {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require("lvim.core.snacks").setup()
+    end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    config = function()
+      require("lvim.core.todo-comments").setup()
+    end,
+    event = "User FileOpened",
+  },
+  {
+    "rmagatti/auto-session",
+    config = function()
+      require("lvim.core.auto-session").setup()
+    end,
+    lazy = false,
+  },
+  {
     "RRethy/vim-illuminate",
     config = function()
       require("lvim.core.illuminate").setup()
     end,
     event = "User FileOpened",
     enabled = lvim.builtin.illuminate.active,
-  },
-
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("lvim.core.indentlines").setup()
-    end,
-    event = "User FileOpened",
-    enabled = lvim.builtin.indentlines.active,
   },
 
 }

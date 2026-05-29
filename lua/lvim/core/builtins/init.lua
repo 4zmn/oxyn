@@ -12,16 +12,17 @@ local builtins = {
   "lvim.core.nvimtree",
   "lvim.core.lir",
   "lvim.core.illuminate",
-  "lvim.core.indentlines",
   "lvim.core.breadcrumbs",
   "lvim.core.project",
   "lvim.core.bufferline",
   "lvim.core.autopairs",
   "lvim.core.comment",
   "lvim.core.lualine",
-  "lvim.core.alpha",
   "lvim.core.mason",
   "lvim.core.noice",
+  "lvim.core.snacks",
+  "lvim.core.todo-comments",
+  "lvim.core.auto-session",
 }
 
 function M.config(config)

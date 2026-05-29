@@ -18,7 +18,7 @@ M.config = function()
       component_separators = nil,
       section_separators = nil,
       theme = nil,
-      disabled_filetypes = { statusline = { "alpha" } },
+      disabled_filetypes = { statusline = { "alpha", "snacks_dashboard" } },
       globalstatus = true,
     },
     sections = {
