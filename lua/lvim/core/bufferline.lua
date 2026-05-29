@@ -50,9 +50,61 @@ M.config = function()
     highlights = {
       background = {
         italic = true,
+        fg = "#565f89",
       },
       buffer_selected = {
         bold = true,
+        italic = true,
+      },
+      fill = {
+        bg = "#1a1b26",
+      },
+      separator = {
+        fg = "#1a1b26",
+      },
+      separator_selected = {
+        fg = "#1a1b26",
+      },
+      indicator_selected = {
+        fg = "#7aa2f7",
+      },
+      diagnostic = {
+        fg = "#e0af68",
+      },
+      diagnostic_selected = {
+        fg = "#e0af68",
+      },
+      hint = {
+        fg = "#1abc9c",
+        sp = "#1abc9c",
+      },
+      hint_selected = {
+        fg = "#1abc9c",
+        sp = "#1abc9c",
+      },
+      info = {
+        fg = "#0db9d7",
+        sp = "#0db9d7",
+      },
+      info_selected = {
+        fg = "#0db9d7",
+        sp = "#0db9d7",
+      },
+      warning = {
+        fg = "#e0af68",
+        sp = "#e0af68",
+      },
+      warning_selected = {
+        fg = "#e0af68",
+        sp = "#e0af68",
+      },
+      error = {
+        fg = "#db4b4b",
+        sp = "#db4b4b",
+      },
+      error_selected = {
+        fg = "#db4b4b",
+        sp = "#db4b4b",
       },
     },
     options = {
@@ -73,8 +125,8 @@ M.config = function()
       left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
       middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
       indicator = {
-        icon = lvim.icons.ui.BoldLineLeft, -- this should be omitted if indicator style is not 'icon'
-        style = "icon", -- can also be 'underline'|'none',
+        icon = lvim.icons.ui.BoldLineLeft,
+        style = "underline",
       },
       buffer_close_icon = lvim.icons.ui.Close,
       modified_icon = lvim.icons.ui.Circle,
@@ -139,7 +191,7 @@ M.config = function()
       persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
       -- can also be a table containing 2 custom separators
       -- [focused and unfocused]. eg: { '|', '|' }
-      separator_style = "thin",
+      separator_style = "slant",
       enforce_regular_tabs = false,
       always_show_bufferline = false,
       hover = {

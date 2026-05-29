@@ -25,8 +25,8 @@ function M.config()
       on_attach = "default",
       select_prompts = false,
       view = {
-        adaptive_size = false,
-        centralize_selection = true,
+        adaptive_size = true,
+        centralize_selection = false,
         width = 30,
         cursorline = true,
         debounce_delay = 15,
@@ -34,7 +34,7 @@ function M.config()
         preserve_window_proportions = false,
         number = false,
         relativenumber = false,
-        signcolumn = "yes",
+        signcolumn = "no",
         float = {
           enable = false,
           quit_on_focus_loss = true,
@@ -52,7 +52,7 @@ function M.config()
         add_trailing = false,
         group_empty = false,
         highlight_git = "name",
-        highlight_opened_files = "none",
+        highlight_opened_files = "name",
         root_folder_label = ":t",
         full_name = false,
         indent_width = 2,
@@ -63,7 +63,7 @@ function M.config()
         highlight_bookmarks = "none",
         highlight_clipboard = "name",
         indent_markers = {
-          enable = false,
+          enable = true,
           inline_arrows = true,
           icons = {
             corner = "└",
@@ -82,7 +82,7 @@ function M.config()
               color = lvim.use_icons,
             },
             folder = {
-              enable = false,
+              enable = lvim.use_icons,
               color = lvim.use_icons,
             },
           },
