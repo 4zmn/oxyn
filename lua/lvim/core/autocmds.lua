@@ -120,6 +120,9 @@ function M.load_defaults()
           vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = cursorline_hl.bg })
           vim.api.nvim_set_hl(0, "SLBranchName", { fg = normal_hl.fg, bg = cursorline_hl.bg })
           vim.api.nvim_set_hl(0, "SLSeparator", { fg = cursorline_hl.fg, bg = statusline_hl.bg })
+          vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#3b4261" })
+          vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1f2335" })
+          vim.opt.pumblend = 10
         end,
       },
     },

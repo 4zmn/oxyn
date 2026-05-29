@@ -127,6 +127,26 @@ local core_plugins = {
 
   -- Treesitter
   {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("lvim.core.noice").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    enabled = lvim.builtin.noice.active,
+  },
+  {
+    "MunifTanjim/nui.nvim",
+    lazy = true,
+  },
+  {
+    "rcarriga/nvim-notify",
+    lazy = true,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
     version = false,

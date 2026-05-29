@@ -22,6 +22,16 @@ function M.config()
       sorting_strategy = nil,
       layout_strategy = nil,
       layout_config = {},
+      borderchars = {
+        prompt = { "─", "│", " ", "│", "─", "─", " ", "─" },
+        results = { "─", "│", "─", "│", "─", "─", "─", "─" },
+        preview = { "─", "│", "─", "│", "─", "─", "─", "─" },
+      },
+      layout_config = {
+        height = 0.85,
+        width = 0.85,
+        prompt_position = "top",
+      },
       vimgrep_arguments = {
         "rg",
         "--color=never",
