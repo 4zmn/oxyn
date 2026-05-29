@@ -30,6 +30,7 @@ end
 M.setup = function()
   local status_ok, ibl = pcall(require, "ibl")
   if status_ok then
+    vim.api.nvim_set_hl(0, "IblScope", { fg = "#3b4261" })
     ibl.setup {
       exclude = {
         buftypes = lvim.builtin.indentlines.options.buftype_exclude,

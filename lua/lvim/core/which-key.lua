@@ -32,7 +32,7 @@ M.config = function()
         scroll_up = "<c-u>",
       },
       window = {
-        border = "single",
+        border = "rounded",
         padding = { 1, 2 },
         winblend = 0,
       },
@@ -40,6 +40,7 @@ M.config = function()
         height = { min = 4, max = 25 },
         width = { min = 20, max = 50 },
         spacing = 3,
+        align = "center",
       },
       show_help = true,
       show_keys = true,
