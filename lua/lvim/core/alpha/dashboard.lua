@@ -10,7 +10,7 @@ local banner = {
 }
 
 M.banner_small = {
-  "  4SHVIM",
+  "  OXYN",
 }
 
 M.banner_alt_1 = {

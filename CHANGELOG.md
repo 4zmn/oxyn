@@ -1,8 +1,8 @@
-# 4SHVIM Changelog
+# OXYN Changelog
 
 ## Local Fork
 
-- Rebranded as 4SHVIM.
+- Rebranded as OXYN.
 - Maintainer: 4zmn.
 - Added standalone user-local installer and launcher.
 - Added newer Neovim compatibility fixes.

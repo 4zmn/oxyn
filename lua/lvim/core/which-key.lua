@@ -211,28 +211,28 @@ M.config = function()
         e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
       },
       L = {
-        name = "+4SHVIM",
+        name = "+OXYN",
         c = {
           "<cmd>edit " .. get_config_dir() .. "/config.lua<cr>",
           "Edit config.lua",
         },
-        d = { "<cmd>FourShvimDocs<cr>", "View 4SHVIM docs" },
+        d = { "<cmd>OxynDocs<cr>", "View OXYN docs" },
         f = {
-          "<cmd>lua require('lvim.core.telescope.custom-finders').find_4shvim_files()<cr>",
-          "Find 4SHVIM files",
+          "<cmd>lua require('lvim.core.telescope.custom-finders').find_oxyn_files()<cr>",
+          "Find OXYN files",
         },
         g = {
-          "<cmd>lua require('lvim.core.telescope.custom-finders').grep_4shvim_files()<cr>",
-          "Grep 4SHVIM files",
+          "<cmd>lua require('lvim.core.telescope.custom-finders').grep_oxyn_files()<cr>",
+          "Grep OXYN files",
         },
-        k = { "<cmd>Telescope keymaps<cr>", "View 4SHVIM keymappings" },
+        k = { "<cmd>Telescope keymaps<cr>", "View OXYN keymappings" },
         i = {
           "<cmd>lua require('lvim.core.info').toggle_popup(vim.bo.filetype)<cr>",
-          "Toggle 4SHVIM Info",
+          "Toggle OXYN Info",
         },
         I = {
-          "<cmd>lua require('lvim.core.telescope.custom-finders').view_4shvim_changelog()<cr>",
-          "View 4SHVIM changelog",
+          "<cmd>lua require('lvim.core.telescope.custom-finders').view_oxyn_changelog()<cr>",
+          "View OXYN changelog",
         },
         l = {
           name = "+logs",
@@ -255,8 +255,8 @@ M.config = function()
           },
           N = { "<cmd>edit $NVIM_LOG_FILE<cr>", "Open the Neovim logfile" },
         },
-        r = { "<cmd>FourShvimReload<cr>", "Reload 4SHVIM configuration" },
-        u = { "<cmd>FourShvimUpdate<cr>", "Update 4SHVIM" },
+        r = { "<cmd>OxynReload<cr>", "Reload OXYN configuration" },
+        u = { "<cmd>OxynUpdate<cr>", "Update OXYN" },
       },
       s = {
         name = "Search",

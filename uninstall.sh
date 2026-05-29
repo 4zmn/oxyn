@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="${NVIM_APPNAME:-fvim}"
+APP_NAME="${NVIM_APPNAME:-oxyn}"
 INSTALL_PREFIX="${INSTALL_PREFIX:-"$HOME/.local"}"
 XDG_DATA_HOME="${XDG_DATA_HOME:-"$HOME/.local/share"}"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}"
 XDG_CACHE_HOME="${XDG_CACHE_HOME:-"$HOME/.cache"}"
 
-FOURSHVIM_RUNTIME_DIR="${FOURSHVIM_RUNTIME_DIR:-"$XDG_DATA_HOME/4shvim"}"
-FOURSHVIM_CONFIG_DIR="${FOURSHVIM_CONFIG_DIR:-"$XDG_CONFIG_HOME/4shvim"}"
-FOURSHVIM_CACHE_DIR="${FOURSHVIM_CACHE_DIR:-"$XDG_CACHE_HOME/4shvim"}"
+OXYN_RUNTIME_DIR="${OXYN_RUNTIME_DIR:-"$XDG_DATA_HOME/oxyn"}"
+OXYN_CONFIG_DIR="${OXYN_CONFIG_DIR:-"$XDG_CONFIG_HOME/oxyn"}"
+OXYN_CACHE_DIR="${OXYN_CACHE_DIR:-"$XDG_CACHE_HOME/oxyn"}"
 
 REMOVE_CONFIG=0
 if [ "${1:-}" = "--remove-config" ]; then
@@ -17,12 +17,12 @@ if [ "${1:-}" = "--remove-config" ]; then
 fi
 
 rm -f "$INSTALL_PREFIX/bin/$APP_NAME"
-rm -f "$INSTALL_PREFIX/share/applications/4shvim.desktop"
-rm -f "$INSTALL_PREFIX/share/icons/4shvim.png"
-rm -rf "$FOURSHVIM_RUNTIME_DIR" "$FOURSHVIM_CACHE_DIR"
+rm -f "$INSTALL_PREFIX/share/applications/oxyn.desktop"
+rm -f "$INSTALL_PREFIX/share/icons/oxyn.png"
+rm -rf "$OXYN_RUNTIME_DIR" "$OXYN_CACHE_DIR"
 
 if [ "$REMOVE_CONFIG" -eq 1 ]; then
-  rm -rf "$FOURSHVIM_CONFIG_DIR"
+  rm -rf "$OXYN_CONFIG_DIR"
 fi
 
-echo "4SHVIM uninstalled. User config kept unless --remove-config was provided."
+echo "OXYN uninstalled. User config kept unless --remove-config was provided."

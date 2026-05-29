@@ -1,11 +1,11 @@
 SHELL := /usr/bin/env bash
 
 install:
-	@echo starting 4SHVIM installer
+	@echo starting OXYN installer
 	bash ./install.sh
 
 install-bin:
-	@echo starting 4SHVIM installer
+	@echo starting OXYN installer
 	bash ./install.sh
 
 install-neovim-binary:
@@ -13,7 +13,7 @@ install-neovim-binary:
 	bash ./utils/installer/install-neovim-from-release
 
 uninstall:
-	@echo starting 4SHVIM uninstaller
+	@echo starting OXYN uninstaller
 	bash ./uninstall.sh
 
 generate_new_lockfile:

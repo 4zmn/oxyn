@@ -7,7 +7,7 @@ local function deprecate(name, alternative)
     return
   end
 
-  alternative = alternative or "See the 4SHVIM changelog"
+  alternative = alternative or "See the OXYN changelog"
 
   local trace = debug.getinfo(3, "Sl")
   local shorter_src = trace.short_src
@@ -37,7 +37,7 @@ function M.handle()
   lvim.builtin.notify = {}
   setmetatable(lvim.builtin.notify, {
     __newindex = function(_, k, _)
-      deprecate("lvim.builtin.notify." .. k, "Use the active 4SHVIM notification configuration")
+      deprecate("lvim.builtin.notify." .. k, "Use the active OXYN notification configuration")
     end,
   })
 

@@ -43,7 +43,7 @@ function plugin_loader.init(opts)
   end
 
   local rtp = vim.opt.rtp:get()
-  local base_dir = (vim.env.FOURSHVIM_BASE_DIR or get_runtime_dir() .. "/4shvim"):gsub("\\", "/")
+  local base_dir = (vim.env.OXYN_BASE_DIR or get_runtime_dir() .. "/oxyn"):gsub("\\", "/")
   local idx_base = #rtp + 1
   for i, path in ipairs(rtp) do
     path = path:gsub("\\", "/")

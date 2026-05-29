@@ -9,13 +9,13 @@ local _, actions = pcall(require, "telescope.actions")
 local _, previewers = pcall(require, "telescope.previewers")
 local _, make_entry = pcall(require, "telescope.make_entry")
 
-function M.find_4shvim_files(opts)
+function M.find_oxyn_files(opts)
   opts = opts or {}
   local theme_opts = themes.get_ivy {
     sorting_strategy = "ascending",
     layout_strategy = "bottom_pane",
     prompt_prefix = ">> ",
-    prompt_title = "~ 4SHVIM files ~",
+    prompt_title = "~ OXYN files ~",
     cwd = get_runtime_dir(),
     search_dirs = { get_lvim_base_dir(), lvim.lsp.templates_dir },
   }
@@ -23,13 +23,13 @@ function M.find_4shvim_files(opts)
   builtin.find_files(opts)
 end
 
-function M.grep_4shvim_files(opts)
+function M.grep_oxyn_files(opts)
   opts = opts or {}
   local theme_opts = themes.get_ivy {
     sorting_strategy = "ascending",
     layout_strategy = "bottom_pane",
     prompt_prefix = ">> ",
-    prompt_title = "~ search 4SHVIM ~",
+    prompt_title = "~ search OXYN ~",
     cwd = get_runtime_dir(),
     search_dirs = { get_lvim_base_dir(), lvim.lsp.templates_dir },
   }
@@ -47,7 +47,7 @@ local copy_to_clipboard_action = function(prompt_bufnr)
   actions.close(prompt_bufnr)
 end
 
-function M.view_4shvim_changelog()
+function M.view_oxyn_changelog()
   local opts = themes.get_ivy {
     cwd = get_lvim_base_dir(),
   }
@@ -55,7 +55,7 @@ function M.view_4shvim_changelog()
 
   pickers
     .new(opts, {
-      prompt_title = "~ 4SHVIM Changelog ~",
+      prompt_title = "~ OXYN Changelog ~",
 
       finder = finders.new_oneshot_job(
         {

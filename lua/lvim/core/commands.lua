@@ -18,21 +18,21 @@ M.defaults = {
     end,
   },
   {
-    name = "FourShvimToggleFormatOnSave",
+    name = "OxynToggleFormatOnSave",
     fn = function()
       require("lvim.core.autocmds").toggle_format_on_save()
     end,
   },
   {
-    name = "FourShvimInfo",
+    name = "OxynInfo",
     fn = function()
       require("lvim.core.info").toggle_popup(vim.bo.filetype)
     end,
   },
   {
-    name = "FourShvimDocs",
+    name = "OxynDocs",
     fn = function()
-      local documentation_url = "https://github.com/4SHVIM/4SHVIM"
+      local documentation_url = "https://github.com/OXYN/OXYN"
       if vim.fn.has "mac" == 1 or vim.fn.has "macunix" == 1 then
         vim.fn.execute("!open " .. documentation_url)
       elseif vim.fn.has "win32" == 1 or vim.fn.has "win64" == 1 then
@@ -45,49 +45,49 @@ M.defaults = {
     end,
   },
   {
-    name = "FourShvimReload",
+    name = "OxynReload",
     fn = function()
       require("lvim.config"):reload()
     end,
   },
   {
-    name = "FourShvimUpdate",
+    name = "OxynUpdate",
     fn = function()
       require("lvim.bootstrap"):update()
     end,
   },
   {
-    name = "FourShvimVersion",
+    name = "OxynVersion",
     fn = function()
       print(require("lvim.utils.git").get_lvim_version())
     end,
   },
   {
-    name = "FourShvimCacheReset",
+    name = "OxynCacheReset",
     fn = function()
       require("lvim.utils.hooks").reset_cache()
     end,
   },
   {
-    name = "FourShvimSyncCorePlugins",
+    name = "OxynSyncCorePlugins",
     fn = function()
       require("lvim.plugin-loader").sync_core_plugins()
     end,
   },
   {
-    name = "FourShvimChangelog",
+    name = "OxynChangelog",
     fn = function()
-      require("lvim.core.telescope.custom-finders").view_4shvim_changelog()
+      require("lvim.core.telescope.custom-finders").view_oxyn_changelog()
     end,
   },
   {
-    name = "FourShvimVersion",
+    name = "OxynVersion",
     fn = function()
       print(require("lvim.utils.git").get_lvim_version())
     end,
   },
   {
-    name = "FourShvimOpenlog",
+    name = "OxynOpenlog",
     fn = function()
       vim.fn.execute("edit " .. require("lvim.core.log").get_path())
     end,

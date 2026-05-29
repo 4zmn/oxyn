@@ -1,4 +1,4 @@
-# 4SHVIM
+# OXYN
 
 A Neovim distribution by [4zmn](https://github.com/4zmn).
 
@@ -9,10 +9,10 @@ Requires **Neovim >= 0.10**. Neovim is not bundled.
 ## Quick Start
 
 ```sh
-git clone https://github.com/4zmn/4shvim.git
-cd 4shvim
+git clone https://github.com/4zmn/oxyn.git
+cd oxyn
 ./install.sh
-fvim
+oxyn
 ```
 
 ---
@@ -23,10 +23,10 @@ fvim
 
 | Path | Purpose |
 |------|---------|
-| `~/.local/bin/fvim` | Launcher script |
-| `~/.local/share/4shvim/4shvim/` | 4SHVIM runtime (cloned repo) |
-| `~/.config/4shvim/config.lua` | User config overrides |
-| `~/.cache/4shvim/` | Cache directory |
+| `~/.local/bin/oxyn` | Launcher script |
+| `~/.local/share/oxyn/oxyn/` | OXYN runtime (cloned repo) |
+| `~/.config/oxyn/config.lua` | User config overrides |
+| `~/.cache/oxyn/` | Cache directory |
 
 ### Startup Flow
 
@@ -36,12 +36,12 @@ fvim
    - `get_runtime_dir()`, `get_config_dir()`, `get_cache_dir()`, `get_lvim_base_dir()` — path resolvers
    - `join_paths(...)` — platform-aware path joining
    - `require_clean()`, `require_safe()`, `reload()` — module utilities
-   - Patches `vim.fn.stdpath` to redirect cache to `FOURSHVIM_CACHE_DIR`
-   - Configures runtimepath for isolated operation (when `FOURSHVIM_RUNTIME_DIR` is set)
+   - Patches `vim.fn.stdpath` to redirect cache to `OXYN_CACHE_DIR`
+   - Configures runtimepath for isolated operation (when `OXYN_RUNTIME_DIR` is set)
    - Initializes [lazy.nvim](https://github.com/folke/lazy.nvim) plugin loader
    - Bootstraps Mason LSP manager
 
-3. **`lvim.config`** — Initializes default config (`lvim` global table), loads `~/.config/4shvim/config.lua` user overrides, sets leader key, defines autocmds.
+3. **`lvim.config`** — Initializes default config (`lvim` global table), loads `~/.config/oxyn/config.lua` user overrides, sets leader key, defines autocmds.
 
 4. **`lvim.plugins`** — Returns the base plugin spec table (merged with user's `lvim.plugins`).
 
@@ -56,15 +56,15 @@ fvim
 Plugins are managed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 
 - **Core plugins** are defined in `lua/lvim/plugins.lua`
-- **User plugins** go in `~/.config/4shvim/config.lua` under `lvim.plugins`
-- **Lockfile** at `~/.config/4shvim/lazy-lock.json`
+- **User plugins** go in `~/.config/oxyn/config.lua` under `lvim.plugins`
+- **Lockfile** at `~/.config/oxyn/lazy-lock.json`
 - Run `:Lazy` to open the plugin UI
 
 ---
 
 ## Configuration
 
-Edit `~/.config/4shvim/config.lua`:
+Edit `~/.config/oxyn/config.lua`:
 
 ```lua
 -- Change colorscheme
@@ -125,7 +125,7 @@ lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<CR>"
 | `<Space>b` | Buffer management (pick, find, prev, next, close, sort) |
 | `<Space>g` | Git (lazygit, gitsigns, telescope) |
 | `<Space>l` | LSP (code action, diagnostics, format, rename, symbols) |
-| `<Space>L` | 4SHVIM (edit config, docs, find/grep 4SHVIM files, changelog, logs, reload, update) |
+| `<Space>L` | OXYN (edit config, docs, find/grep OXYN files, changelog, logs, reload, update) |
 | `<Space>p` | Plugins (Lazy install, sync, clean, update, log) |
 | `<Space>s` | Search (Telescope: files, help, colorscheme, registers, keymaps) |
 | `<Space>d` | Debug (DAP: breakpoints, continue, step, REPL) |
@@ -209,19 +209,19 @@ See `lua/lvim/plugins.lua` for the full list.
 ## Updating
 
 ```sh
-fvim --headless '+Lazy! sync' +qa
+oxyn --headless '+Lazy! sync' +qa
 ```
 
-Or from within 4SHVIM: `<Space>Lu` (or `<Space>L` then `u`).
+Or from within OXYN: `<Space>Lu` (or `<Space>L` then `u`).
 
 ---
 
 ## Uninstall
 
 ```sh
-~/.local/share/4shvim/4shvim/uninstall.sh
+~/.local/share/oxyn/oxyn/uninstall.sh
 # To also remove user config:
-~/.local/share/4shvim/4shvim/uninstall.sh --remove-config
+~/.local/share/oxyn/oxyn/uninstall.sh --remove-config
 ```
 
 ---

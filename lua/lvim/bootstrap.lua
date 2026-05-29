@@ -1,7 +1,7 @@
 local M = {}
 
 if vim.fn.has "nvim-0.10" ~= 1 then
-  vim.notify("Please upgrade your Neovim base installation. 4SHVIM requires v0.10+", vim.log.levels.WARN)
+  vim.notify("Please upgrade your Neovim base installation. OXYN requires v0.10+", vim.log.levels.WARN)
   vim.wait(5000, function()
     ---@diagnostic disable-next-line: redundant-return-value
     return false
@@ -23,10 +23,10 @@ _G.require_clean = require("lvim.utils.modules").require_clean
 _G.require_safe = require("lvim.utils.modules").require_safe
 _G.reload = require("lvim.utils.modules").reload
 
----Get the full path to `$FOURSHVIM_RUNTIME_DIR`
+---Get the full path to `$OXYN_RUNTIME_DIR`
 ---@return string|nil
 function _G.get_runtime_dir()
-  local lvim_runtime_dir = os.getenv "FOURSHVIM_RUNTIME_DIR"
+  local lvim_runtime_dir = os.getenv "OXYN_RUNTIME_DIR"
   if not lvim_runtime_dir then
     -- when nvim is used directly
     return vim.call("stdpath", "data")
@@ -34,20 +34,20 @@ function _G.get_runtime_dir()
   return lvim_runtime_dir
 end
 
----Get the full path to `$FOURSHVIM_CONFIG_DIR`
+---Get the full path to `$OXYN_CONFIG_DIR`
 ---@return string|nil
 function _G.get_config_dir()
-  local lvim_config_dir = os.getenv "FOURSHVIM_CONFIG_DIR"
+  local lvim_config_dir = os.getenv "OXYN_CONFIG_DIR"
   if not lvim_config_dir then
     return vim.call("stdpath", "config")
   end
   return lvim_config_dir
 end
 
----Get the full path to `$FOURSHVIM_CACHE_DIR`
+---Get the full path to `$OXYN_CACHE_DIR`
 ---@return string|nil
 function _G.get_cache_dir()
-  local lvim_cache_dir = os.getenv "FOURSHVIM_CACHE_DIR"
+  local lvim_cache_dir = os.getenv "OXYN_CACHE_DIR"
   if not lvim_cache_dir then
     return vim.call("stdpath", "cache")
   end
@@ -63,7 +63,7 @@ function M:init(base_dir)
   self.pack_dir = join_paths(self.runtime_dir, "site", "pack")
   self.lazy_install_dir = join_paths(self.pack_dir, "lazy", "opt", "lazy.nvim")
 
-  ---@meta overridden to use FOURSHVIM_CACHE_DIR instead, since a lot of plugins call this function internally
+  ---@meta overridden to use OXYN_CACHE_DIR instead, since a lot of plugins call this function internally
   ---NOTE: changes to "data" are currently unstable, see #2507
   ---@diagnostic disable-next-line: duplicate-set-field
   vim.fn.stdpath = function(what)
@@ -73,13 +73,13 @@ function M:init(base_dir)
     return vim.call("stdpath", what)
   end
 
-  ---Get the full path to 4SHVIM's base directory
+  ---Get the full path to OXYN's base directory
   ---@return string
   function _G.get_lvim_base_dir()
     return base_dir
   end
 
-  if os.getenv "FOURSHVIM_RUNTIME_DIR" then
+  if os.getenv "OXYN_RUNTIME_DIR" then
     vim.opt.rtp:remove(join_paths(vim.call("stdpath", "data"), "site"))
     vim.opt.rtp:remove(join_paths(vim.call("stdpath", "data"), "site", "after"))
     -- vim.opt.rtp:prepend(join_paths(self.runtime_dir, "site"))
@@ -106,10 +106,10 @@ function M:init(base_dir)
   return self
 end
 
----Update 4SHVIM
+---Update OXYN
 ---pulls the latest changes from github and, resets the startup cache
 function M:update()
-  require("lvim.core.log"):info "Trying to update 4SHVIM..."
+  require("lvim.core.log"):info "Trying to update OXYN..."
 
   vim.schedule(function()
     reload("lvim.utils.hooks").run_pre_update()

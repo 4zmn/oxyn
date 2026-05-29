@@ -219,7 +219,7 @@ function M.enable_reload_config_on_save()
   vim.api.nvim_create_autocmd("BufWritePost", {
     group = "lvim_reload_config_on_save",
     pattern = pattern,
-    desc = "Trigger FourShvimReload on saving config.lua",
+    desc = "Trigger OxynReload on saving config.lua",
     callback = function()
       require("lvim.config"):reload()
     end,

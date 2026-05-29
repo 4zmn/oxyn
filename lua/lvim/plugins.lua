@@ -353,7 +353,7 @@ local get_default_sha1 = function(spec)
   return default_sha1[short_name] and default_sha1[short_name].commit
 end
 
-if not vim.env.FOURSHVIM_DEV_MODE then
+if not vim.env.OXYN_DEV_MODE then
   --  Manually lock the commit hashes of core plugins
   for _, spec in ipairs(core_plugins) do
     spec["commit"] = get_default_sha1(spec)

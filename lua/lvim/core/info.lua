@@ -190,24 +190,24 @@ function M.toggle_popup(ft)
   end
 
   local function set_syntax_hl()
-    vim.cmd [[highlight FourShvimInfoIdentifier gui=bold]]
-    vim.cmd [[highlight link FourShvimInfoHeader Type]]
-    vim.fn.matchadd("FourShvimInfoHeader", "Buffer info")
-    vim.fn.matchadd("FourShvimInfoHeader", "Active client(s)")
-    vim.fn.matchadd("FourShvimInfoHeader", fmt("Overridden %s server(s)", ft))
-    vim.fn.matchadd("FourShvimInfoHeader", "Formatters info")
-    vim.fn.matchadd("FourShvimInfoHeader", "Linters info")
-    vim.fn.matchadd("FourShvimInfoHeader", "Code actions info")
-    vim.fn.matchadd("FourShvimInfoHeader", "Automatic LSP info")
-    vim.fn.matchadd("FourShvimInfoIdentifier", " " .. ft .. "$")
+    vim.cmd [[highlight OxynInfoIdentifier gui=bold]]
+    vim.cmd [[highlight link OxynInfoHeader Type]]
+    vim.fn.matchadd("OxynInfoHeader", "Buffer info")
+    vim.fn.matchadd("OxynInfoHeader", "Active client(s)")
+    vim.fn.matchadd("OxynInfoHeader", fmt("Overridden %s server(s)", ft))
+    vim.fn.matchadd("OxynInfoHeader", "Formatters info")
+    vim.fn.matchadd("OxynInfoHeader", "Linters info")
+    vim.fn.matchadd("OxynInfoHeader", "Code actions info")
+    vim.fn.matchadd("OxynInfoHeader", "Automatic LSP info")
+    vim.fn.matchadd("OxynInfoIdentifier", " " .. ft .. "$")
     vim.fn.matchadd("string", "true")
     vim.fn.matchadd("string", "active")
     vim.fn.matchadd("string", lvim.icons.ui.BoxChecked)
     vim.fn.matchadd("boolean", "inactive")
     vim.fn.matchadd("error", "false")
-    tbl_set_highlight(require("lvim.lsp.null-ls.formatters").list_registered(ft), "FourShvimInfoIdentifier")
-    tbl_set_highlight(require("lvim.lsp.null-ls.linters").list_registered(ft), "FourShvimInfoIdentifier")
-    tbl_set_highlight(require("lvim.lsp.null-ls.code_actions").list_registered(ft), "FourShvimInfoIdentifier")
+    tbl_set_highlight(require("lvim.lsp.null-ls.formatters").list_registered(ft), "OxynInfoIdentifier")
+    tbl_set_highlight(require("lvim.lsp.null-ls.linters").list_registered(ft), "OxynInfoIdentifier")
+    tbl_set_highlight(require("lvim.lsp.null-ls.code_actions").list_registered(ft), "OxynInfoIdentifier")
   end
 
   local Popup = require("lvim.interface.popup"):new {

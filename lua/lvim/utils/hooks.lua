@@ -44,7 +44,7 @@ function M.run_post_update()
   if vim.fn.has "nvim-0.9" ~= 1 then
     local compat_tag = "1.2.0"
     vim.notify(
-      "Please upgrade your Neovim base installation. 4SHVIM requires v0.10+",
+      "Please upgrade your Neovim base installation. OXYN requires v0.10+",
       vim.log.levels.WARN
     )
     vim.wait(1000)
