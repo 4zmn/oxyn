@@ -120,6 +120,13 @@ function M.config()
 end
 
 function M.setup()
+  -- compatibility: nvim 0.10+ removed vim.treesitter.ft_to_lang
+  if not vim.treesitter.ft_to_lang and vim.treesitter.language then
+    vim.treesitter.ft_to_lang = vim.treesitter.language.get_lang or function(ft)
+      return ft
+    end
+  end
+
   local previewers = require "telescope.previewers"
   local sorters = require "telescope.sorters"
 
