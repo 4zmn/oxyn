@@ -120,6 +120,12 @@ function M.config()
 end
 
 function M.setup()
+  -- telescope 0.1.x calls ts_parsers.ft_to_lang; nvim-treesitter removed it in favor of vim.treesitter.language.get_lang
+  local ok, ts_parsers = pcall(require, "nvim-treesitter.parsers")
+  if ok and ts_parsers and not ts_parsers.ft_to_lang then
+    ts_parsers.ft_to_lang = vim.treesitter.language.get_lang
+  end
+
   local previewers = require "telescope.previewers"
   local sorters = require "telescope.sorters"
 

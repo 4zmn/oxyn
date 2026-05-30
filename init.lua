@@ -1,8 +1,3 @@
--- compat: telescope 0.1.x (pre 2025) expects vim.treesitter.ft_to_lang (removed in nvim 0.10+)
-if not vim.treesitter.ft_to_lang then
-  vim.treesitter.ft_to_lang = function(ft) return ft end
-end
-
 local base_dir = vim.env.OXYN_BASE_DIR
   or (function()
     local init_path = debug.getinfo(1, "S").source
