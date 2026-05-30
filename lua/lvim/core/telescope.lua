@@ -120,7 +120,13 @@ function M.config()
 end
 
 function M.setup()
-  -- telescope 0.1.x calls ts_parsers.ft_to_lang; nvim-treesitter removed it in favor of vim.treesitter.language.get_lang
+  -- telescope 0.1.x expects nvim-treesitter.configs.is_enabled and parsers.ft_to_lang;
+  -- newer nvim-treesitter renamed configs to config and removed ft_to_lang
+  local _, ts_configs = pcall(require, "nvim-treesitter.configs")
+  if type(ts_configs) ~= "table" or not ts_configs.is_enabled then
+    package.loaded["nvim-treesitter.configs"] = { is_enabled = function() return true end }
+  end
+
   local ok, ts_parsers = pcall(require, "nvim-treesitter.parsers")
   if ok and ts_parsers and not ts_parsers.ft_to_lang then
     ts_parsers.ft_to_lang = vim.treesitter.language.get_lang
